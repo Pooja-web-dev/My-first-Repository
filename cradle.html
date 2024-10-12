@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>cradle</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        
+        height: 100vh;
+        background-color: black;
+        display: grid;
+      place-items: center;
+      }
+      .main{
+        
+        width: 20rem;
+        height: 50rem;
+        border-radius: 0.3rem;
+        border-top: 1rem solid purple;
+        background-image: transparent;
+        display: flex;
+justify-content: center;
+gap: 1.7rem;
+        
+      }
+      .sec{
+        width: 0.2rem;
+        height: 15rem;
+        background-color: purple;
+        position: relative;
+      }
+     .main div::before{
+        background-color: purple;
+        position: absolute;
+        border-radius: 50%;
+        content: "";
+        width:30px;
+        aspect-ratio: 1;
+        bottom: -1rem;
+        left: -0.8rem;}
+        
+      
+       .main div:last-child{
+        animation: left-swing 2s linear infinite ;
+        transform-origin: top left;
+      }
+      @keyframes left-swing{
+        0%{
+          rotate:0deg;
+        }30%{
+          rotate: -30deg;
+        }50%{
+          rotate: 0deg;
+        }100%{
+        rotate: 0deg;}
+      }
+
+             .main div:first-child{
+        animation: right-swing 2s linear 1s infinite ;
+        transform-origin: top left;
+      }
+      @keyframes right-swing{
+        0%{
+          rotate:0deg;
+        }30%{
+          rotate: 30deg;
+        }50%{
+          rotate: 0deg;
+        }100%{
+        rotate: 0deg;}
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="sec"></div>
+      <div class="sec"></div>
+      <div class="sec"></div>
+       <div class="sec"></div>
+       <div class="sec"></div>
+    </div>
+  </body>
+</html>

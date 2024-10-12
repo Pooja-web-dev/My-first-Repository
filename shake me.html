@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title> color</title>
+   <link href="style.css" rel="stylesheet">
+   <style>
+     *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-size;
+}
+body{
+  height: 100vh;
+ background-color: black;
+ display: grid;
+ place-items: center;
+}
+.button{
+  color: purple;
+  border: 2px solid purple;
+  background-color: transparent;
+  padding: 12px 23px;
+  font-family: Sans-Serif;
+  font-size: 34px;
+  font-weight: 500;
+  
+  &:hover{
+    border: 2px solid red;
+    color: red;
+    animation: shaking 0.2s linear;
+  }
+}
+@keyframes shaking{
+  0%{
+    rotate: 20deg;
+  }50%{
+    rotate: -20deg;
+  }100%{
+    rotate: 20deg;
+  }
+}
+   </style>
+  </head>
+  <body>
+    <button class="button">Shake Me</button>
+  </body>
+</html>

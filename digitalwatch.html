@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>watch</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: box-border;
+      }
+      body{
+        
+        position: relative;
+        background-image: Linear-gradient(to right ,#a8cb64,#05a48f);
+        display: grid;
+        place-items: center;
+      }
+      .main{
+    background-color: white;
+      height: 10%;
+      width: 70%;
+       box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+       border-radius: 1.2rem;
+       color: black;
+       display:grid;
+       place-items: center;
+       border-bottom: 0.2rem solid purple;
+       
+      }
+      #clock{
+        font-size: 2.5rem;
+        font-family: "Urbanist", system-ui;
+        color:black;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="main">
+        <p id="clock"></p>
+      </div>
+    
+    <script>
+      
+     const currTime = () =>{
+      let myTime=new Date().toLocaleTimeString();
+      document.getElementById('clock').innerText= myTime;
+  };
+    
+     
+     setInterval(()=>{currTime()
+         },1000);
+         
+    </script>
+  </body>
+</html>

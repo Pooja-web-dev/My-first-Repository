@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>subscribe</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: black;
+        color: white;
+      }
+      .sub{
+        font-size: 50px;
+        position: relative;
+      }
+      .sub::before{
+        content: "SUBSCRIBE..";
+        color: yellow;
+        width: 100%;
+        position: absolute;
+        border-right: 2px solid yellow;
+        overflow: hidden;
+        animation: load 2.8s linear infinite;
+      }
+      @keyframes load{
+        0%{
+          width: 0;
+        }50%{
+          width: 100%;
+        }100%{
+          width: 0;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1 class="sub">SUBSCRIBE..</h1>
+  </body>
+</html>

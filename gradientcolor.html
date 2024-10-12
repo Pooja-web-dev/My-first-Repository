@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>Gradient color</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+    
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 80%;
+        font-family: "Urbanist", system-ui;
+      }
+      #button1, #button2{
+        border-radius: 2rem;
+        padding: 12px 15px;
+        font-size: 12px;
+    border: none;
+        margin-bottom: 1.5rem;
+        color: white;
+        font-weight: 500;
+      }
+      #button1{
+        background-color: pink;
+      }
+      
+#button2{
+        background-color:  blue;
+      }
+      .copycode{
+        border-left: 2px solid yellow;
+        width: 300px;
+        height: 50px;
+        padding: 10px;
+        font-weight: 500;
+        display: grid;
+        place-content: center;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="button1">#638e02</button>
+      <button id="button2">#988e02</button>
+    </div>
+    <h4>Copy the link</h4>
+    <div class="copycode">
+    <p>Background-Image : </p>
+    </div>
+    <script>
+      let btn1=document.getElementById("button1");
+      let btn2=document.getElementById("button2");
+  let copydiv=document.querySelector(".copycode");
+  let rgb1="#000";
+  let rgb2="#fff";
+  
+  
+  const hexValues= ()=>{
+  let hexValue="0123456789abcdef";
+   let colors="#";
+    for(i=0 ;i<6 ;i++){
+     colors=colors+hexValue[Math.floor(Math.random()*16)];
+       }
+       return colors;
+  };
+  
+
+  const eventHandler1 =()=>{
+    rgb1=hexValues();
+    console.log(rgb1);
+    btn1.innerHTML=`${rgb1}`;
+    document.body.style.backgroundImage=`Linear-gradient(to right, ${rgb1},${rgb2})`;
+    copydiv.innerHTML =`Background-Image : Linear-gradient(to right ,${rgb1},${rgb2})`;
+  }
+  
+const eventHandler2 =()=>{
+    rgb2=hexValues();
+    console.log(rgb2);
+    btn2.innerHTML=`${rgb2}`;
+    document.body.style.backgroundImage=`Linear-gradient(to right, ${rgb1},${rgb2})`;
+    copydiv.innerHTML =`Background-Image : Linear-gradient(to right ,${rgb1},${rgb2})`;
+  }
+
+copydiv.addEventListener("click", ()=>{
+  navigator.clipboard.wtiteText(copydiv.innerText);
+});
+
+btn1.addEventListener("click",eventHandler1);
+   btn2.addEventListener("click",eventHandler2);
+    </script>
+  </body>
+</html>
+
